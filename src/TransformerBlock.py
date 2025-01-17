@@ -21,18 +21,20 @@ class TransformerBlock(nn.Module):
         self.drop_shortcut = nn.Dropout(cfg["drop_rate"])
 
     def forward(self, x):
+        # First use the norm->attention->dropout/shortcut
+        # Left or bottom or Begin
         shortcut = x
         x = self.norm1(x)
         x = self.att(x)
         x = self.drop_shortcut(x)
         x += shortcut
 
+        # Then use the norm->FeedForward->dropout/shortcut
+        # Right or Top or End
         shortcut = x
         x = self.norm2(x)
         x = self.ff(x)
         x = self.drop_shortcut(x)
         x += shortcut
-
+        # Return the final value
         return x
-
-
