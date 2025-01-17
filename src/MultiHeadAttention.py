@@ -5,8 +5,7 @@ import torch.nn as nn
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_in, d_out, context_length, dropout, num_heads, qkv_bias=False):
         super().__init__()
-        assert (d_out % num_heads == 0), "d_out must be divisible by num_heads"
-
+        assert (d_out % num_heads == 0), f"d_out {d_out} must be divisible by num_heads {num_heads}"
         self.d_out = d_out
         self.num_heads = num_heads
         self.head_dim = d_out // num_heads
@@ -16,9 +15,13 @@ class MultiHeadAttention(nn.Module):
         self.dropout = nn.Dropout(dropout)
         # Uses a linear layer to combine head outputs
         self.out_proj = nn.Linear(d_out, d_out)
-        self.register_buffer("mask",
-                             torch.triu(torch.ones(context_length, context_length),
-                                        diagonal=1))
+        self.register_buffer(
+            "mask",
+            torch.triu(
+                torch.ones(context_length, context_length),
+                diagonal=1
+            )
+        )
 
     def forward(self, x):
         b, num_tokens, d_in = x.shape
