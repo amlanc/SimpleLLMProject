@@ -1,5 +1,5 @@
+import torch
 from torch import nn
-
 from MultiHeadAttention import MultiHeadAttention
 from SimpleFeedForward import SimpleFeedForward
 
@@ -34,3 +34,5 @@ class TransformerBlock(nn.Module):
         x += shortcut
 
         return x
+
+
