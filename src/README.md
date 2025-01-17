@@ -1,5 +1,6 @@
 # Simple_LLM_Project
-This workspace contains all the code and data I had to 
+
+This workspace contains all the code and data I had to
 create while going through Sebastian Raschka's book
 creating LLM from Scratch
 

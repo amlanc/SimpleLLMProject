@@ -1,4 +1,5 @@
 from torch import nn
+
 from GELU import GELU
 
 
@@ -25,5 +26,3 @@ class ExampleDeepNeuralNetwork(nn.Module):
             else:
                 x = layer_output
         return x
-
-
