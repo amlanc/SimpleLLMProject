@@ -10,6 +10,7 @@
 bin/
 lib/
 include/
+**/__pycache__/**
 out
 gen
 pyvenv.cfg
