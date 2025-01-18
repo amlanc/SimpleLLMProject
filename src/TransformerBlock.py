@@ -3,6 +3,8 @@ from torch import nn
 from MultiHeadAttention import MultiHeadAttention
 from SimpleFeedForward import SimpleFeedForward
 
+# This is a basic representation of a Transformer block as used in an LLM
+
 
 class TransformerBlock(nn.Module):
 

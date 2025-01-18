@@ -13,8 +13,10 @@ class MultiHeadAttention(nn.Module):
         self.W_key = nn.Linear(d_in, d_out, bias=qkv_bias)
         self.W_value = nn.Linear(d_in, d_out, bias=qkv_bias)
         self.dropout = nn.Dropout(dropout)
-        # Uses a linear layer to combine head outputs
+        # Use a linear layer to combine head outputs
         self.out_proj = nn.Linear(d_out, d_out)
+
+        # UPPER TRIANGULAR PART OF THE METRICS
         self.register_buffer(
             "mask",
             torch.triu(
