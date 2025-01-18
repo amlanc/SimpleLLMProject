@@ -1,13 +1,15 @@
 # IntelliJ project files
+*.iml
+*.idea
+*.swp
 .env/
 .venv/
 .idea/
 .DS_Store/
-*.iml
-*.idea
+.idea/
+bin/
+lib/
+include/
 out
 gen
-**/bin/**
-**/lib/**
-include/
 pyvenv.cfg
