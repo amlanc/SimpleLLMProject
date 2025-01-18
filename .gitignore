@@ -1,10 +1,13 @@
-### Example user template template
-### Example user template
-
 # IntelliJ project files
-.idea
-.DS_Store
+.env/
+.venv/
+.idea/
+.DS_Store/
 *.iml
+*.idea
 out
 gen
-*.idea
+**/bin/**
+**/lib/**
+include/
+pyvenv.cfg
