@@ -21,9 +21,8 @@ class ExampleDeepNeuralNetwork(nn.Module):
         for layer in self.layers:
             layer_output = layer(x)
             if self.use_shortcut and x.shape == layer_output.shape:
-                x += layer_output
+                # print("Using Shortcut")
+                x = x + layer_output
             else:
                 x = layer_output
         return x
-
-
