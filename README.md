@@ -1,2 +1,2 @@
-# This is an attempt to follow Sebastian Raschka's book [Building a Large Language Model \(From Scratch\)](https://livebook.manning.com/book/build-a-large-language-model-from-scratch/title  "Building a Large Language Model") to the letter and understand each of the components. 
-## All the code is working and most of it is from the book.I had to write some stuff to get clarity of some of the components for myself, those are all available under CC license.
+## This is an attempt to follow Sebastian Raschka's book [Building a Large Language Model \(From Scratch\)](https://livebook.manning.com/book/build-a-large-language-model-from-scratch/title  "Building a Large Language Model") to the letter and understand each of the components. 
+### All the code is working and most of it is from the book.I had to write some stuff to get clarity of some of the components for myself, those are all available under CC license.
