@@ -35,24 +35,24 @@ class GPTModel(nn.Module):
         # if torch.backends.mps.is_available():
         #     self.device = torch.device('mps')
         batch_size, seq_len = in_idx.shape
-        print(f"forward(): batch_size: {batch_size}, seq_len: {seq_len} and Input Shape: {in_idx.shape}")
+        # print(f"forward(): batch_size: {batch_size}, seq_len: {seq_len} and Input Shape: {in_idx.shape}")
 
         in_idx.to(self.device)
         tok_embeds = self.tok_emb(in_idx).to(self.device)
-        print("forward(): created tok_embeds")
+        # print("forward(): created tok_embeds")
 
         pos_embeds = self.pos_emb(
             torch.arange(seq_len).to(self.device)
         ).to(self.device)
-        print("forward(): created pos_embeds")
+        # print("forward(): created pos_embeds")
 
         # x = torch.cat((tok_embeds, pos_embeds), dim=-1)
         x = tok_embeds + pos_embeds
 
-        print(f"forward(): x.shape: {x.shape}")
+        # print(f"forward(): x.shape: {x.shape}")
         x = self.drop_emb(x)
         x = self.transformer_blocks(x)
         x = self.final_norm(x)
         logits = self.out_head(x)
-        print(f"forward(): logits.shape: {logits.shape}")
+        # print(f"forward(): logits.shape: {logits.shape}")
         return logits
