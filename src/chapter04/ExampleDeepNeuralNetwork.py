@@ -1,5 +1,5 @@
 from torch import nn
-from GELU import GELU
+from src.chapter04.GELU import GELU
 
 
 class ExampleDeepNeuralNetwork(nn.Module):
