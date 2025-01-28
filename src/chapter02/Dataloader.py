@@ -1,3 +1,5 @@
+import string
+
 import tiktoken
 from torch.utils.data import DataLoader
 from src.chapter02.GPTDatasetV1 import GPTDatasetV1
@@ -15,7 +17,7 @@ class Dataloader:
 
     # Now we need to create a data loader that iterates over the input dataset
     # and returns the input and targets as PyTorch tensors
-    def create_dataloader_v1(self, txt):
+    def create_dataloader_v1(self, txt: string):
         # Initialize the tokenizer
         tokenizer = tiktoken.get_encoding("gpt2")
 
