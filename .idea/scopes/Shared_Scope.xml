@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Shared Scope" pattern="file[SimpleLLMProject]:*/&amp;&amp;!file[SimpleLLMProject]:.idea/*" />
+</component>
