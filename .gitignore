@@ -5,4 +5,5 @@ models/**
 **/gpt2/**
 *.pth
 *.pkl
-
+/__pycache__/
+**/__pycache__/**
