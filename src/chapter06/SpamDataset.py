@@ -4,17 +4,21 @@ from torch.utils.data import Dataset
 import pandas as pd
 
 
-# This class is to be used against train, validate and test csv files not
-# against the main tsv file.
+
+# This class identifies the longest sequence in the training dataset, encodes
+# the text messages, and ensures that all other sequences are padded with a
+# padding token to match the length of the longest sequence.
 #
+# NOTE: This class is to be used against train, validate and test csv files not
+# against the main tsv file.
 class SpamDataset(Dataset):
     def __init__(self, csv_file: str, tokenizer, max_length, pad_token_id=50256):
-        if (csv_file.endswith('SMSSpamCollection.tsv')):
+        if (csv_file.endswith('.tsv')):
             self.data = pd.read_csv(csv_file, sep = "\t", header = None, names = ["Label", "Text"])
         else:
             self.data = pd.read_csv(csv_file)
-            
-        print(self.data.shape)
+        print(f"Shape of {csv_file}: {self.data.shape}")
+        
         # Pre tokenize
         self.encoded_texts = [tokenizer.encode(text) for text in self.data["Text"]]
         
@@ -28,7 +32,7 @@ class SpamDataset(Dataset):
                 encoded_text[:self.max_length] for encoded_text in self.encoded_texts
             ]
         
-        # Then Pad as needed
+        # Then Pad as needed to match max_length
         self.encoded_texts = [
             encoded_text +
             [pad_token_id] * (self.max_length - len(encoded_text)) for encoded_text in self.encoded_texts
