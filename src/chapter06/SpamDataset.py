@@ -62,12 +62,16 @@ class SpamDataset(Dataset):
     
 def main():
     tokenizer = tiktoken.get_encoding("gpt2")
-    dataset = SpamDataset(csv_file="../../data/sms_spam_collection/SMSSpamCollection.tsv",
+    # dataset = SpamDataset(csv_file="../../data/sms_spam_collection/SMSSpamCollection.tsv",
+    dataset = SpamDataset(csv_file="../../data/test.csv",
                           tokenizer=tokenizer,
                           max_length=None,
                           pad_token_id=50256)
     print("Dataset Max Length: ", dataset.max_length)
-
+    # df = dataset.data["Text"]
+    # print(df.values)
+    
+    
 if __name__ == '__main__':
     main()
         
