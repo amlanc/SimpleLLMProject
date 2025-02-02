@@ -7,3 +7,10 @@ models/**
 *.pkl
 /__pycache__/
 **/__pycache__/**
+**/.idea/workspace.xml
+**/data/.DS_Store
+**/data/sms_spam_collection.zip
+**/data/sms_spam_collection/
+**/data/test.csv
+**/data/train.csv
+**/data/validate.csv
