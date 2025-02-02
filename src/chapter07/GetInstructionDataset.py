@@ -39,6 +39,7 @@ def download_and_load_file(file_path, url):
 def main():
     data = download_and_load_file(file_path, url)
     print("Number of entries:", len(data))
+    print(f"Example entry: {data[50]}")
     
 if __name__ == "__main__":
     main()
