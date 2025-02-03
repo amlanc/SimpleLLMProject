@@ -4,12 +4,14 @@ import urllib.request
 
 
 file_path = "../../data/instruction-data.json"
-url = (
-    "https://raw.githubusercontent.com/rasbt/LLMs-from-scratch"
-    "/main/ch07/01_main-chapter-code/instruction-data.json"
-)
 
-def download_and_load_file(file_path, url):
+
+def download_and_load_file(file_path):
+    url = (
+        "https://raw.githubusercontent.com/rasbt/LLMs-from-scratch"
+        "/main/ch07/01_main-chapter-code/instruction-data.json"
+    )
+    
     if not os.path.exists(file_path):
         print("download_and_load_file(): Downloading file from " + url)
         with urllib.request.urlopen(url) as response:
@@ -37,7 +39,7 @@ def download_and_load_file(file_path, url):
             return data
 
 def main():
-    data = download_and_load_file(file_path, url)
+    data = download_and_load_file(file_path)
     print("Number of entries:", len(data))
     print(f"Example entry: {data[50]}")
     
