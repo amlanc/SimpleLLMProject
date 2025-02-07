@@ -1,5 +1,5 @@
 from torch import nn
-from src.chapter04.GELU import GELU
+from chapter04.GELU import GELU
 
 
 class SimpleFeedForward(nn.Module):

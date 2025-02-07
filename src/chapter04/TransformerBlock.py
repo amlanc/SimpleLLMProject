@@ -1,7 +1,7 @@
 from torch import nn
-from src.chapter03.MultiHeadAttention import MultiHeadAttention
-from src.chapter04.LayerNorm import LayerNorm
-from src.chapter04.SimpleFeedForward import SimpleFeedForward
+from chapter03.MultiHeadAttention import MultiHeadAttention
+from chapter04.LayerNorm import LayerNorm
+from chapter04.SimpleFeedForward import SimpleFeedForward
 
 # This is a basic representation of a Transformer block as used in an LLM
 

@@ -1,6 +1,5 @@
 import urllib.request
-import tensorflow as tf
-from gd import download_and_load_gpt2
+from gpt_download import download_and_load_gpt2
 
 url = (
     "https://raw.githubusercontent.com/rasbt/LLMs-from-scratch/main/ch05/01_main-chapter-code/gpt_download.py"

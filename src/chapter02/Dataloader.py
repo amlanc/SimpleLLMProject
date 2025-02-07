@@ -2,7 +2,7 @@ import string
 
 import tiktoken
 from torch.utils.data import DataLoader
-from src.chapter02.GPTDatasetV1 import GPTDatasetV1
+from chapter02.GPTDatasetV1 import GPTDatasetV1
 
 
 class Dataloader:
