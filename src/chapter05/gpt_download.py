@@ -22,7 +22,7 @@ def download_and_load_gpt2(model_size, models_dir):
 
     # Define paths
     model_dir = os.path.join(models_dir, model_size)
-    print(f"Model directory: {model_dir}")
+    print(f"\nModel directory: {model_dir}")
     #
     base_url = "https://openaipublic.blob.core.windows.net/gpt-2/models"
     backup_base_url = "https://f001.backblazeb2.com/file/LLMs-from-scratch/gpt2"
