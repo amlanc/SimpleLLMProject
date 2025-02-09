@@ -1,6 +1,5 @@
 .gitattributes
 .gitattributes
-models/**
 /gpt2/
 **/gpt2/**
 *.pth
