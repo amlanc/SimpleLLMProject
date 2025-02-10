@@ -1,8 +1,8 @@
-# This does the tokenization encode and decode based on a supplied int:string vocabulary dictionary
 import re
 
-
-class SimpleTokenizerV1:
+# This does the tokenization encode and decode based on a
+# supplied int:string vocabulary dictionary
+class SimpleTokenizerV1():
     # Always pass the vocab into the initializer
     def __init__(self, vocab):
         self.str_to_int = vocab
