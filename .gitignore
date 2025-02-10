@@ -14,3 +14,17 @@
 /data/validate.csv
 /data/instruction-data.json
 /data/instruction-data-with-response.json
+src/accuracy-plot.pdf
+src/loss-plot.pdf
+.idea/.gitignore
+.idea/csv-editor.xml
+.idea/markdown.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/pandoc.xml
+.idea/SimpleLLMProject.iml
+.idea/vcs.xml
+.idea/webResources.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.virtual_documents/src/SimpleLLM.ipynb
