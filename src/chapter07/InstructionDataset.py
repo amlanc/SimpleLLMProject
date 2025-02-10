@@ -7,10 +7,12 @@ class InstructionDataset(Dataset):
         self.encoded_texts = []
         #
         for entry in data:
-            # print(entry)
             instruction_plus_input = self.format_input(entry)
+            #
             response_text = f"\n\n### Response:\n{entry['output']}"
+            #
             final_text = instruction_plus_input + response_text
+            #
             self.encoded_texts.append(tokenizer.encode(final_text))
 
     # The __getitem__ method returns the encoded text at the given index
@@ -22,10 +24,8 @@ class InstructionDataset(Dataset):
     def __len__(self):
         return len(self.data)
     
-    
     # The format_input method formats the input for the model
-    @staticmethod
-    def format_input(entry):  # Accepts a dictionary entry
+    def format_input(self, entry):  # Now an instance method
         instruction_text = (
             f"Below is an instruction that describes a task. "
             f"Write a response that appropriately completes the request."
@@ -35,3 +35,4 @@ class InstructionDataset(Dataset):
             f"\n\n### Input:\n{entry['input']}" if entry["input"] else ""
         )
         return instruction_text + input_text
+

@@ -1,5 +1,4 @@
 .gitattributes
-.gitattributes
 /gpt2/
 **/gpt2/**
 *.pth
@@ -8,8 +7,10 @@
 **/__pycache__/**
 **/.idea/workspace.xml
 **/data/.DS_Store
-**/data/sms_spam_collection.zip
-**/data/sms_spam_collection/
-**/data/test.csv
-**/data/train.csv
-**/data/validate.csv
+/data/sms_spam_collection.zip
+**/data/sms_spam_collection/**
+/data/test.csv
+/data/train.csv
+/data/validate.csv
+/data/instruction-data.json
+/data/instruction-data-with-response.json
